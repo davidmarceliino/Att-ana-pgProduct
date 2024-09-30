@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pgProduto.css">
+    <title>Página do Produto</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background-color: rgba(136, 136, 136, 0.776);
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            background-color: rgb(49, 47, 47);
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.728);
+        }
+
+        .logo {
+            color: rgb(230, 11, 11);
+            font-size: 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .imgLogo {
+            width: 100px;
+            margin-left: 20px;
+        }
+
+        .footer {
+            background-color: #000;
+            color: #ff0000;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 750px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .image-gallery {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 80px;
+            transition: border-color 0.2s;
+        }
+
+        .thumbnail.selected {
+            border-color: #0070f0;
+        }
+
+        .thumbnail img {
+            width: 100%;
+        }
+
+        .details {
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .price {
+            color: #d90f0f;
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .description {
+            font-size: 14px;
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        .buy-section {
+            margin: 20px 0;
+        }
+
+        .add-to-cart, .buy {
+            background-color: #0070f0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        .add-to-cart:hover, .buy:hover {
+            background-color: #005bb5;
+        }
+
+        .reviews {
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .review {
+            margin-bottom: 10px;
+        }
+
+        .review strong {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo"></div>
+        <img class="imgLogo" src="img/logo menu.png" alt="Logo">
+    </div>
+    <br><br><br>
+
+    <div class="container">
+        <div class="image-gallery">
+            <img id="mainImage" class="main-image" src="img/tenis.jfif" alt="Produto Principal">
+            <div class="thumbnails">
+                <div class="thumbnail" onclick="changeImage('img/tenis1.png', this)">
+                    <img src="img/tenis1.png" alt="Miniatura 1">
+                </div>
+                <div class="thumbnail" onclick="changeImage('img/img4.jfif', this)">
+                    <img src="img/img4.jfif" alt="Miniatura 2">
+                </div>
+                <div class="thumbnail" onclick="changeImage('img/jordan.avif', this)">
+                    <img src="img/jordan.avif" alt="Miniatura 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="details">
+            <h1 class="product-title">Tênis Esportivo Exemplo</h1>
+            <div class="price">R$ 199,90</div>
+            <div class="description">
+                Tênis esportivo ideal para corrida e atividades do dia a dia. Feito com material respirável e solado
+                antiderrapante.
+            </div>
+            <div class="buy-section">
+                <button class="buy">Comprar</button><br><br>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <footer style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: auto;">
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                <div>
+                    <h3 style="color: #e63946;">Sobre Nós</h3>
+                    <p>Informações sobre a empresa e sua missão.</p>
+                </div>
+                <div>
+                    <h3 style="color: #e63946;">Links Rápidos</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: #f1faee; text-decoration: none;">Inicio</a></li>
+                        <li><a href="#Produtos" style="color: #f1faee; text-decoration: none;">Produtos</a></li>
+                        <li><a href="#" style="color: #f1faee; text-decoration: none;">Serviços</a></li>
+                        <li><a href="#" style="color: #f1faee; text-decoration: none;">Contatos</a></li>
+                        <li><a href="#" style="color: #f1faee; text-decoration: none;">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #e63946;">Contato</h3>
+                    <p>Email: contato@exemplo.com</p>
+                    <p>Telefone: (11) 1234-5678</p>
+                    <p>Endereço: Rua Exemplo, 123 - Cidade, Estado</p>
+                </div>
+            </div>
+            <hr style="border: 1px solid #e63946; margin: 20px 0;">
+            <p>&copy; 2024. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        function changeImage(imageUrl, thumbnail) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = imageUrl;
+
+            // Remove a classe "selected" de todas as miniaturas
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('selected'));
+
+            // Adiciona a classe "selected" à miniatura clicada
+            thumbnail.classList.add('selected');
+        }
+    </script>
+
+</body>
+</html>
